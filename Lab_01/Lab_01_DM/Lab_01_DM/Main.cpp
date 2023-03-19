@@ -1,7 +1,5 @@
 #include "Header.h"
 
-
-
 int main() {
 	ldouble left, right, eps;
 
@@ -13,8 +11,8 @@ int main() {
 	cin >> eps;
 	cout << endl << endl << endl << "RESULT" << endl << endl;
 
-	Secant findSec(left, right, eps);
 	Dichotomy findDich(left, right, eps);
+	Secant findSec(left, right, eps);
 
 	SResult dichRes = findDich.Find();
 	SResult secRes = findSec.Find();

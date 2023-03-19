@@ -12,14 +12,25 @@ typedef struct {
 	ldouble result;
 } SResult;
 
-
 ldouble f(ldouble x) {
     return atan(x) - sin(x);
+}
+
+void Swap(ldouble& left, ldouble& right) {
+    ldouble temp = left;
+    left = right;
+    right = temp;
 }
 
 bool SetLimits(ldouble& leftLim, ldouble& rightLim, ldouble eps) {
     bool onGoing = true, resultIsFound = false;
     ldouble step = (fabs(leftLim) + fabs(rightLim)) / 10, fX = 0, fLeft = 0;
+
+    if (leftLim > rightLim)
+        Swap(leftLim, rightLim);
+
+    if (step >= 1)
+        step = 1;
 
     fLeft = f(leftLim);
     if (fLeft == 0) {
@@ -59,7 +70,7 @@ bool SetLimits(ldouble& leftLim, ldouble& rightLim, ldouble eps) {
 class Secant {
 
 private:
-	ldouble a, b, x, eps;
+	ldouble leftLim, rightLim, x, eps;
 	SResult result;
 
 	ldouble FindSecant(ldouble a, ldouble b) {
@@ -69,8 +80,8 @@ private:
 
 public:
 	Secant(ldouble a, ldouble b, ldouble eps) {
-        this->a = a;
-        this->b = b;
+        this->leftLim = a;
+        this->rightLim = b;
         this->eps = eps;
         result.iterations = 0;
         result.result = NAN;
@@ -79,32 +90,30 @@ public:
 	}
 
 	SResult Find() {
-		x = FindSecant(a, b);
+		x = FindSecant(leftLim, rightLim);
 
         bool resultIsFound = false;
 
-        resultIsFound = SetLimits(a, b, eps);
+        resultIsFound = SetLimits(leftLim, rightLim, eps);
         if (resultIsFound)
-            x = a;
+            x = leftLim;
 
         ldouble staticPoint = 0;
-		int counter = 0;
 		ldouble xPrev = x;
         while (!resultIsFound) {
-            counter++;
+            result.iterations++;
 
-            if (f(x) * f(a) <= 0)
-                staticPoint = a;
+            if (f(x) * f(leftLim) <= 0)
+                staticPoint = leftLim;
             else
-                staticPoint = b;
+                staticPoint = rightLim;
 
             xPrev = x;
             x = FindSecant(x, staticPoint);
 
-            if (fabs(x - xPrev) < eps)
+            if (fabs(x - xPrev) <= eps)
                 resultIsFound = true;
         }
-        result.iterations = counter;
 		result.result = x;
 
 		return result;
@@ -128,14 +137,15 @@ public:
 
     SResult Find()
     {
-        ldouble midLim = (leftLim + rightLim) / 2;
+        ldouble midLim = 0;
         bool BordersAreSetting = true, resultIsFound = false;
 
         resultIsFound = SetLimits(leftLim, rightLim, eps);
 
         if (resultIsFound)
             midLim = leftLim;
-        
+        else
+            midLim = (leftLim + rightLim) / 2;
         while (!resultIsFound) {
             result.iterations++;
 
