@@ -62,6 +62,19 @@ ldouble Get1D(ldouble x) {
     return (1 / (x * x + 1) - cos(x));
 }
 
+void ShowIterations(const ldouble current_x, const ldouble previous_x, const int number_of_iterations) {
+    if (number_of_iterations == 1)
+        cout << endl << endl << "Iterations method:" << endl << endl << "№\t\t" << "current x\t\t" << "previous x\t\t" << "difference\t\t" << endl;
+
+    cout << number_of_iterations << "\t\t" << current_x << " \t\t" << previous_x << " \t\t" << fabs(current_x - previous_x) << endl;
+}
+void ShowNewton(const ldouble current_x, const ldouble previous_x, const int number_of_iterations) {
+    if (number_of_iterations == 1)
+        cout << endl << endl << "Newton method:" << endl << endl << "№\t\t" << "current x\t\t" << "previous x\t\t" << "difference\t\t" << endl;
+
+    cout << number_of_iterations << "\t\t" << current_x << "\t\t" << previous_x << "    \t\t" << fabs(current_x - previous_x) << endl;
+}
+
 class Newton {
 private:
     ldouble leftLim;
@@ -118,6 +131,8 @@ public:
 
                 prevLim = runLim;
                 runLim = GetX(runLim);
+
+                ShowNewton(runLim, prevLim, result.iterations);
             }
 
             result.result = runLim;
@@ -150,9 +165,7 @@ public:
     SResult Find() {
         bool resultIsFound = false;
 
-        resultIsFound = SetLimits(leftLim, rightLim, eps);  // SetLimits() локалізує корінь, змінюючи параметри
-                                                            //leftLim i rightLim так, що fabs(leftLim - rightLim) <= 1
-                                                            // а між ними корінь
+        resultIsFound = SetLimits(leftLim, rightLim, eps);
 
         result.result = leftLim;
 
@@ -161,7 +174,7 @@ public:
             ldouble maxDerivative = 0, currentDerivative = 0, prevRes = leftLim;
 
             for (ldouble n = leftLim; n < rightLim; n += fabs(leftLim + rightLim) / 10)
-                if (fabs(currentDerivative = Get1D(n)) > maxDerivative) //Get1D - перша похідна
+                if (fabs(currentDerivative = Get1D(n)) > maxDerivative)
                     maxDerivative = currentDerivative;
 
             result.result = GetCloser(result.result, maxDerivative);
@@ -170,6 +183,8 @@ public:
 
                 prevRes = result.result;
                 result.result = GetCloser(result.result, maxDerivative);
+
+                ShowIterations(result.result, prevRes, result.iterations);
             }
         }
         return result;

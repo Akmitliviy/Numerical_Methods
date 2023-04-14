@@ -111,3 +111,90 @@ void SystemSolver::GaussItself(vector<vector<ldouble>>& matrix, vector<ldouble>&
 		size_of_matrix--;
 	}
 }
+vector<ldouble> SystemSolver::LU() {
+	size_t size = matrix[0].size();
+
+	vector<vector<ldouble>> l(size, vector<ldouble>(size));
+	vector<vector<ldouble>> u(size, vector<ldouble>(size));
+
+
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			l[i][j] = 0;
+			u[i][j] = (i == j) ? 1 : 0;
+		}
+	}
+
+	for (int i = 0; i < size; i++)
+		l[i][0] = matrix[i][0];
+
+	for (int index = 1, switcher = 0; index < size; index++, switcher++) {
+		if (switcher % 2) {
+			for (int i = index; i < size; i++) {
+				for (int k = 0; k < index; k++)
+					l[i][index] += l[i][k] * u[k][index];
+				l[i][index] = matrix[i][index] - l[i][index];
+			}
+		}
+		else {
+			for (int i = index - 1, j = index; j < size; j++) {
+				for (int k = 0; k < index - 1; k++) {
+					u[i][j] += l[i][k] * u[k][j];
+				}
+				u[i][j] = (matrix[i][j] - u[i][j]) / l[i][i];
+			}
+			index--;
+		}
+	}
+
+	Show(l, string("L"));
+	Show(u, string("U"));
+
+	vector<ldouble> y(size);
+	for (int i = 0; i < size; i++)
+		y[i] = 0;
+
+	for (int i = 0; i < size; i++) {
+		for (int k = 0; k < i; k++)
+			y[i] += y[k] * l[i][k];
+
+		y[i] = (B[i] - y[i]) / l[i][i];
+	}
+
+	cout << "Free term is: " << endl << endl;
+	for (int i = 0; i < size; i++)
+		cout << B[i] << "\t";
+	cout << endl << endl;
+
+	cout << "Y is: " << endl << endl;
+	for (int i = 0; i < size; i++)
+		cout << y[i] << "\t";
+	cout << endl << endl;
+
+	vector<ldouble> result(size);
+	for (int i = 0; i < size; i++)
+		result[i] = 0;
+
+	for (int i = size - 1; i >=0; i--) {
+		for (int k = size - 1; k > i; k--)
+			result[i] += result[k] * u[i][k];
+
+		result[i] = (y[i] - result[i]) / u[i][i];
+	}
+
+	return result;
+}
+
+
+//////////
+
+void Show(vector<vector<ldouble>> matrix, string name) {
+	cout << name << " matrix: " << endl << endl;
+	for (int i = 0; i < matrix.size(); i++) {
+		for (int j = 0; j < matrix.size(); j++) {
+			cout << matrix[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	cout << endl << endl;
+}

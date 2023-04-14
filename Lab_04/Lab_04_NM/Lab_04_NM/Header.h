@@ -26,7 +26,7 @@ public:
 	SystemSolver(T matrix, vector<ldouble> B);
 
 	vector<ldouble> Gauss();
-	//vector<ldouble> LU();
+	vector<ldouble> LU();
 
 };
 
@@ -67,3 +67,5 @@ SystemSolver::SystemSolver(T matrix, vector<ldouble> B) {
 	this->matrix = CopyMatrix(matrix, GetSize(matrix));
 	this->B = B;
 }
+
+void Show(vector<vector<ldouble>> matrix, string name);

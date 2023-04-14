@@ -15,10 +15,10 @@ int main() {
 	SimpleIterations findSimpIt(left, right, eps);
 
 	SResult newtRes = findNewt.Find();
-	SResult SimpItRes = findSimpIt.Find();
+	cout << "Iterations: " << newtRes.iterations << endl << "Result: " << newtRes.result << endl << endl;
 
-	cout << "Newton: " << endl << "Iterations: " << newtRes.iterations << endl << "Result: " << newtRes.result << endl << endl;
-	cout << "Simple Iterations: " << endl << "Iterations: " << SimpItRes.iterations << endl << "Result: " << SimpItRes.result << endl << endl;
+	SResult SimpItRes = findSimpIt.Find();
+	cout << "Iterations: " << SimpItRes.iterations << endl << "Result: " << SimpItRes.result << endl << endl;
 
 	return 0;
 }
