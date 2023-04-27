@@ -5,19 +5,13 @@ using namespace std;
 
 int main()
 {
-	const size_t size{ 3 };
-	//ldouble matrix[size][size] = { { 24.67, 3.24,  5.45, 4.13},
-	//						{ 4.46,  34.86,  3.12, -2.43},
-	//						{ 3.87,  6.54,  45.44, 3.45},
-	//						{ 2.45,  4.25,  5.45, 32.72} };
+	const size_t size{ 4 };
+	ldouble matrix[size][size] = { { 24.67, 3.24,  5.45, 4.13},
+							{ 4.46,  34.86,  3.12, -2.43},
+							{ 3.87,  6.54,  45.44, 3.45},
+							{ 2.45,  4.25,  5.45, 32.72} };
 
-	//vector<ldouble> B{ 80.41, 85.44, 187.84, 152.86 };
-	ldouble matrix[size][size] = { { 4, -9,  2},
-							{ 2,  -4,  4},
-							{ -1,  2,  2}};
-
-	vector<ldouble> B{ 2, 3, 1};
-
+	vector<ldouble> B{ 80.41, 85.44, 187.84, 152.86 };
 	SystemSolver ss(matrix, B);
 
 	vector<ldouble> result = ss.Gauss();

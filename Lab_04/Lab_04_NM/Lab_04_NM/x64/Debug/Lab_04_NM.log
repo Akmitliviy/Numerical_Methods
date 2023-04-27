@@ -1,10 +1,2 @@
-﻿  Functions.cpp
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(60,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(62,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(77,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(91,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(98,4): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(102,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(178,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\Lab_04_NM\Functions.cpp(179,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  Lab_04_NM.cpp
   Lab_04_NM.vcxproj -> C:\Disk_D\Fall\Numerical_Methods\Lab_04\Lab_04_NM\x64\Debug\Lab_04_NM.exe
