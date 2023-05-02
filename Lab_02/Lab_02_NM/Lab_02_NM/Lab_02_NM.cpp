@@ -14,11 +14,11 @@ int main() {
 	Newton findNewt(left, right, eps);
 	SimpleIterations findSimpIt(left, right, eps);
 
-	SResult newtRes = findNewt.Find();
-	cout << "Iterations: " << newtRes.iterations << endl << "Result: " << newtRes.result << endl << endl;
+	//SResult newtRes = findNewt.Find();
+	//cout << "Nwethon method:\n\nIterations: " << newtRes.iterations << endl << "Result: " << newtRes.result << endl << endl;
 
 	SResult SimpItRes = findSimpIt.Find();
-	cout << "Iterations: " << SimpItRes.iterations << endl << "Result: " << SimpItRes.result << endl << endl;
+	cout << "Simple Iterations method:\n\nIterations: " << "Iterations: " << SimpItRes.iterations << endl << "Result: " << SimpItRes.result << endl << endl;
 
 	return 0;
 }

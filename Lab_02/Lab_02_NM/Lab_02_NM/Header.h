@@ -42,6 +42,19 @@ bool SetLimits(ldouble& leftLim, ldouble& rightLim, ldouble eps) {
                 onGoing = false;
                 break;
             }
+        }
+
+        if(onGoing)
+        for (ldouble x = leftLim + step; x < rightLim; x += step) {
+            fX = f(x);
+
+            if (fabs(fX) <= eps) {
+                leftLim = x;
+                rightLim = x;
+                resultIsFound = true;
+                onGoing = false;
+                break;
+            }
 
             if (fLeft * fX <= 0) {
                 rightLim = x;
@@ -153,6 +166,10 @@ private:
     ldouble GetCloser(ldouble x, ldouble k) {
         return x - f(x)/k;
     }
+
+    ldouble GetDerForFi(ldouble x, ldouble max_derivative) {
+        return 1 - Get1D(x) / max_derivative;
+    }
 public:
     SimpleIterations(ldouble leftLim, ldouble rightLim, ldouble eps) {
         this->leftLim = leftLim;
@@ -176,6 +193,12 @@ public:
             for (ldouble n = leftLim; n < rightLim; n += fabs(leftLim + rightLim) / 10)
                 if (fabs(currentDerivative = Get1D(n)) > maxDerivative)
                     maxDerivative = currentDerivative;
+
+            cout << "Derivatives of fi: " << endl;
+            for (ldouble x = leftLim; x < rightLim; x += fabs(leftLim + rightLim) / 20) {
+                cout << GetDerForFi(x, maxDerivative) << endl;
+            }
+            cout << endl;
 
             result.result = GetCloser(result.result, maxDerivative);
             while (!(fabs(result.result - prevRes) <= eps)) {
