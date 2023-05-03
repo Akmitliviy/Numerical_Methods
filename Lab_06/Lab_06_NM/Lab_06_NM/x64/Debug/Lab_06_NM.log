@@ -1,0 +1,4 @@
+﻿  LeastSquares.cpp
+C:\Disk_D\Fall\Numerical_Methods\Lab_06\Lab_06_NM\Lab_06_NM\LeastSquares.cpp(123,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_06\Lab_06_NM\Lab_06_NM\LeastSquares.cpp(124,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Lab_06_NM.vcxproj -> C:\Disk_D\Fall\Numerical_Methods\Lab_06\Lab_06_NM\x64\Debug\Lab_06_NM.lib
