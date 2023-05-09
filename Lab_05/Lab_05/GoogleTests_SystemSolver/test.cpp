@@ -1,5 +1,7 @@
 #include "pch.h"
 
+
+// Типу крутий і замвсть того, щоб перевіряти роботу програми в main() перевіряю в тестах
 TEST(SystemSolver_2, Jacobi) {
 
 	const size_t size{ 4 };
