@@ -22,6 +22,7 @@ vector<ldouble> SystemSolver_2::Jacobi() {
 		roots = FindCloserJacobi(hollow_matrix, new_free_terms, roots);
 	} while (!m_is_roots_found);
 
+	m_is_roots_found = false;
 	return roots;
 }
 
@@ -43,6 +44,7 @@ vector<ldouble> SystemSolver_2::Seidel() {
 		roots = FindCloserSeidel(hollow_matrix, new_free_terms, roots);
 	} while (!m_is_roots_found);
 
+	m_is_roots_found = false;
 	return roots;
 }
 
@@ -198,6 +200,11 @@ vector<ldouble> SystemSolver_2::FindCloserJacobi(
 		roots[i] += new_free_terms[i];
 	}
 
+	for (int i = 0; i < roots.size(); i++) {
+		cout << roots[i] << "\t\t";
+	}
+	cout << endl << endl;
+
 	CheckIfRootsFound(roots, previous_roots);
 
 	return roots;
@@ -220,6 +227,11 @@ vector<ldouble> SystemSolver_2::FindCloserSeidel(
 		roots[i] += new_free_terms[i];
 		previous_roots_copy[i] = roots[i];
 	}
+
+	for (int i = 0; i < roots.size(); i++) {
+		cout << roots[i] << "\t\t";
+	}
+	cout << endl << endl;
 
 	CheckIfRootsFound(roots, previous_roots);
 

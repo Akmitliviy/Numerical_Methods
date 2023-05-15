@@ -25,7 +25,7 @@ TEST(LeastSquares, IsWorking) {
 	const double result_accuracy = 0.0001;
 	const size_t num_of_equations{ 5 };
 	const size_t num_of_variables{ 3 };
-	double matrix[num_of_equations][num_of_variables] = {{ 1,  3, -2},
+	double matrix[num_of_equations][num_of_variables] = {{1,  3, -2},
 														{-1,  2,  1},
 														{ 3, -2, -2},
 														{ 3,  1, -3},

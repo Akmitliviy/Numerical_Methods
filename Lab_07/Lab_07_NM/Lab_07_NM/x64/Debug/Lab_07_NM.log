@@ -1,2 +1,5 @@
 ﻿  CNumericalMethods.cpp
-  Lab_07_NM.vcxproj -> C:\Disk_D\Fall\Numerical_Methods\Lab_07\Lab_07_NM\x64\Debug\Lab_07_NM.lib
+C:\Disk_D\Fall\Numerical_Methods\Lab_07\Lab_07_NM\Lab_07_NM\CNumericalMethods.cpp(111,70): warning C4244: 'argument': conversion from 'const double' to 'const unsigned __int64', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_07\Lab_07_NM\Lab_07_NM\CNumericalMethods.cpp(111,34): warning C4244: 'argument': conversion from 'const double' to 'const unsigned __int64', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_07\Lab_07_NM\Lab_07_NM\CNumericalMethods.cpp(112,19): warning C4244: 'argument': conversion from 'const double' to 'const unsigned __int64', possible loss of data
+  Lab_07_NM.vcxproj -> C:\Disk_D\Fall\Numerical_Methods\Lab_07\Lab_07_NM\x64\Debug\Lab_07_NM.exe
