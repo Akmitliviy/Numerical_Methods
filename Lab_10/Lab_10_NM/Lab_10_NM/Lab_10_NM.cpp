@@ -4,7 +4,6 @@
 
 double f(double x) {
 	return pow(x, 3) * sin(x);
-	//return sqrt(0.3 * x + 1.2);
 }
 
 int main()
@@ -12,8 +11,6 @@ int main()
 	double epsilon = 0.001;
 	double left_border = numbers::pi / 3.0;
 	double right_border = numbers::pi / 2.0;
-	//double left_border = 1.5;
-	//double right_border = 2.3;
 	unsigned int division = 100;
 
 	Integration integral(left_border, right_border, division, f);

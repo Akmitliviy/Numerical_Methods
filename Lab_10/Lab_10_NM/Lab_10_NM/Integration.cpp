@@ -34,12 +34,10 @@ double Integration::RiemannMiddleSum() {
 
 double Integration::GetSecondDerivative(double x) {
 	return -pow(x, 3) * sin(x) + 6 * pow(x, 2) * cos(x) + 6 * x * sin(x);
-	//return -0.0225 / pow(0.3 * x + 1.2, 3.0 / 2.0);
 }
 
 double Integration::GetFourthDerivative(double x) {
 	return pow(x, 3) * sin(x) - 12 * pow(x, 2) * cos(x) - 36 * x * sin(x) + 24 * cos(x);
-	//return -0.00759375 / pow(0.3 * x + 1.2, 7.0 / 2.0);
 }
 
 double Integration::GetError(ETypes type) {
@@ -47,13 +45,13 @@ double Integration::GetError(ETypes type) {
 
 	switch (type) {
 	case e_riemann:
-		result = GetSecondDerivative(m_left_border) * (m_right_border - m_left_border) * pow(m_step, 2) / 24;
+		result = fabs(GetSecondDerivative(m_left_border) * (m_right_border - m_left_border) * pow(m_step, 2) / 24);
 		break;
 	case e_trapezoidal:
-		result = -GetSecondDerivative(m_left_border) * (m_right_border - m_left_border) * pow(m_step, 2) / 12;
+		result = fabs(GetSecondDerivative(m_left_border) * (m_right_border - m_left_border) * pow(m_step, 2) / 12);
 		break;
 	case e_simpson:
-		result = -GetM() * pow(m_right_border - m_left_border, 5) / (180 * pow(m_num_of_steps, 4));
+		result = fabs(GetM() * pow(m_right_border - m_left_border, 5) / (180 * pow(m_num_of_steps, 4)));
 		break;
 	default:
 		break;

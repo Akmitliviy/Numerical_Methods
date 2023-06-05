@@ -1,2 +1,6 @@
-﻿  Lab_10_NM.cpp
+﻿  Integration.cpp
+C:\Disk_D\Fall\Numerical_Methods\Lab_10\Lab_10_NM\Lab_10_NM\Integration.cpp(13,20): warning C4018: '<=': signed/unsigned mismatch
+C:\Disk_D\Fall\Numerical_Methods\Lab_10\Lab_10_NM\Lab_10_NM\Integration.cpp(83,56): warning C4244: 'argument': conversion from 'double' to 'const __int64', possible loss of data
+  Lab_10_NM.cpp
+  Generating Code...
   Lab_10_NM.vcxproj -> C:\Disk_D\Fall\Numerical_Methods\Lab_10\Lab_10_NM\x64\Debug\Lab_10_NM.exe
