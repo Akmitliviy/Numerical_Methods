@@ -1,6 +1,5 @@
 #include "LeastSquares.h"
 
-// Гадаю, методи досить тривіальні і пояснення не потребують
 
 vector<vector<double>> LeastSquares::TranspondMatrix(const vector<vector<double>> matrix) const {
 	vector<vector<double>> transponded(matrix[0].size(), vector<double>(matrix.size()));
@@ -134,8 +133,6 @@ vector<double> LeastSquares::GetX(const vector<vector<double>> matrix, const vec
 
 vector<double> LeastSquares::Find() {
 
-	// Тут просто послідовна реалізація алгоритму з методички
-	// Якщо що, знову ж таки, мені легше то буде пояснити по телефону
 	vector<vector<double>> transponded_matrix = TranspondMatrix(m_matrix);
 	vector<vector<double>> multiplied = MultiplyMatrixes(transponded_matrix, m_matrix);
 	vector<double> new_free_terms = MultiplyMatrixAndColumn(transponded_matrix, m_free_terms);

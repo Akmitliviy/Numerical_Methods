@@ -1,0 +1,10 @@
+﻿  Methods_Lib.cpp
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(60,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(62,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(77,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(91,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(98,4): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(102,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(178,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Methods_Lib\Methods_Lib.cpp(179,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Methods_Lib.vcxproj -> C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\x64\Debug\Methods_Lib.lib
