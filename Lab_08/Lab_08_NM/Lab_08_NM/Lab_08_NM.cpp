@@ -3,9 +3,9 @@
 
 int main()
 {
-	const size_t m_size{ 5 };
-	double m_x[m_size]{ -3, -1, 0, 1, 3 };
-	double m_y[m_size]{ -4, -0.8, 1.6, 2.3, 1.5 };
+	const size_t m_size{ 10 };
+	double m_x[m_size]{ 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 };
+	double m_y[m_size]{1.758203, 1.738744, 1.718369, 1.697320, 1.675834, 1.654140, 1.632460, 1.611005, 1.589975, 1.569559 };
 	const double x{ -2 };
 
 	CInterpolation in(m_x, m_y, m_size);

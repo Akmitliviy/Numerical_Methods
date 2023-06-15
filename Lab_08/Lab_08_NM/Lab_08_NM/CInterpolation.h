@@ -25,5 +25,6 @@ private:
 	double FindQ(double x, double movable_x, double interpolation_step) const;
 	vector<double> Forward(double interpolation_step) const;
 	double Factorial(int x) const;
+	double Error() const;
 };
 

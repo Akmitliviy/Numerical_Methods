@@ -1,2 +1,7 @@
 ﻿  Lab_09_NM.cpp
+  LeastSquares.cpp
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Lab_09_NM\LeastSquares.cpp(11,20): warning C4018: '<=': signed/unsigned mismatch
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Lab_09_NM\LeastSquares.cpp(21,9): warning C4018: '<=': signed/unsigned mismatch
+C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\Lab_09_NM\LeastSquares.cpp(26,20): warning C4018: '<=': signed/unsigned mismatch
+  Generating Code...
   Lab_09_NM.vcxproj -> C:\Disk_D\Fall\Numerical_Methods\Lab_09\Lab_09_NM\x64\Debug\Lab_09_NM.exe
